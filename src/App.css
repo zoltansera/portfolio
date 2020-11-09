@@ -1,0 +1,466 @@
+body, html{
+	height: 100%;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #303030;
+	color: #fff;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.menubar{
+	position: fixed;
+	background-color: transparent;
+	width: 100%;
+	opacity: 1;
+	z-index: 100;
+	text-align: center;
+	transition: opacity 0.5s ease-in, height 0.5s ease-in, background-color 0.5s linear;
+	border-bottom: 0px solid #eee;
+}
+
+.menubar_scrolled{
+	position: fixed;
+	background-color: transparent;
+	width: 100%;
+	border-bottom: 0px solid #fff;
+	opacity: 1;
+	z-index: 100;
+	text-align: center;
+	transition: opacity 0.5s ease-in, height 0.5s ease-in, background-color 0.5s linear;
+}
+
+.scrTrasnpMenuBg{
+	position: absolute;
+	z-index: -1;
+	background-color: #343434;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	border-bottom: 1px solid #545454;
+	transition: opacity 0.5s linear;
+}
+
+.scrTrasnpMenuBg_scrolled{
+	position: absolute;
+	z-index: -1;
+	background-color: #343434;
+	opacity: 0.7;
+	height: 100%;
+	width: 100%;
+	border-bottom: 1px solid #545454;
+	transition: opacity 0.5s linear;
+}
+
+.menuBtn{
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	max-width: 170px;
+	margin-right: 3px;	
+	height: 100%;
+	padding: 20px;
+	cursor: crosshair;
+	z-index: 200;
+	transition: color 0.3s ease-in, letter-spacing 0.3s ease-out, transform 0.3s linear, visibility 0.3s linear;
+}
+
+.menuBtn:hover{
+	color: #fff;
+	letter-spacing: 4px;
+	transform: rotate(5deg);
+}
+
+.desktopLinkBtn{
+	color: #fff;
+	text-decoration: none;
+	height: 100%;
+	cursor: crosshair;
+}
+
+.linkBtn {
+	color: #fff;
+	text-decoration: none;
+	cursor: crosshair;
+	transition: color 0.3s ease-in, letter-spacing 0.3s ease-out, transform 0.3s linear;
+}
+
+.linkBtn:hover {
+	color: #fff;
+	letter-spacing: 4px;
+	transform: rotate(5deg);
+}
+
+.menuLogo{
+	float: left;
+	height: 10px;
+	margin-left: 0px;
+}
+
+.mobileMenu{
+	height: 0px;
+	width: 0px;
+	background-color: #303030;
+	border: 0px solid silver;
+	z-index: 500;
+}
+
+.mobileMenu_open{
+	height: 0px;
+	width: 0px;
+	z-index: 500;
+}
+
+.mobileLogo{
+	visibility: hidden;
+	height: 0px;
+	width: 0px;
+	transition: opacity 0.5s ease-out, height 0.5s ease-out;
+}
+
+.mobMenuBtn{
+	height:0px;
+	width: 0px;
+	visibility: hidden;
+}
+
+.mobMenuBtn_visible{
+	visibility: hidden;
+	height: 0px;
+}	
+	
+	
+	
+.mainImg{
+	display: initial;
+}
+ 
+
+.footer{
+	position: relative;
+	width: 100%;
+	color: #BDC4D6;
+	text-align: center;
+	background-color: #303030;
+	border-top: 1px solid #eee;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.textDiv{
+	padding: 5%;
+}
+
+.textDiv h3, p{
+	color: #fff;
+}
+
+.skill{
+	display: inline-block;
+	margin-right: 10px;
+	transition: letter-spacing 0.3s ease-out, transform 0.3s linear;
+}
+
+.skill:hover{
+	letter-spacing: 4px;
+	transform: rotate(0deg);
+}
+
+
+
+.tooltip{
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  
+  visibility: hidden;
+  width: 150px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0px;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.bgimg-1 {
+  background-image: url("main.jpg");
+}
+
+.bgimg-2 {
+  background-image: url("main2.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("main3.jpg");
+  min-height: 400px;
+}
+
+.bgimg-4 {
+  background-image: url("main4.jpg");
+  min-height: 400px;
+}
+
+.caption{
+  position: absolute;
+  width: 100%;
+  bottom: 50%;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+.caption_fadeout{
+  position: absolute;
+  width: 100%;
+  bottom: 50%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+.caption p{
+	color: #fff;
+	font-weight: bold;
+	font-size: 3em;	
+}
+
+.caption_fadeout p{
+	color: #fff;
+	font-weight: bold;
+	font-size: 3em;	
+}
+
+
+.mainSocialIcons{
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+	text-align: center;
+}
+
+.social-light{
+	color: #fff;
+	transition: transform 0.2s ease-in;
+}
+
+.social-light:hover{
+	color: #fff;
+	transform: rotate(20deg);
+}
+
+.floatingBackToTop{
+	border: 1px solid #fff;
+	border-radius: 30px;
+	background-color: #eee;
+	color: #333;
+	text-align: center;
+	position: fixed;
+	padding-top: 5px;
+	width: 40px;
+	height: 37px;
+	bottom: 15px;
+	right: 15px;
+	transition: color 0.3s linear;
+	visibility: hidden;
+}
+
+.floatingBackToTop:hover{
+	color: #999;
+}
+
+.floatingBackToTop > p {
+	margin-top: -2px;
+}
+
+
+.projectTitle{
+	float: left;
+	padding-left: 30px;
+	color: #fff;
+}
+
+.projectRow{
+	color: #fff;
+	width: 100%;
+	overflow: hidden;
+}
+
+.projectRowLeft{
+	width: 45%;
+	float: left;
+	text-align: left;
+	padding: 3%;
+}
+.projectRowRight{
+	width: 45%;
+	float: right;
+}
+
+.projectRowRight img{
+	position: relative;
+	width: 98%;
+}
+
+
+@media (max-width: 900px) { 
+	.menubar{
+		opacity: 0;
+		height: 0px;
+		transition: opacity 0.5s ease-out, height 0.5s ease-out;
+	}
+	
+	.menubar_scrolled{
+		opacity: 0;
+		height: 0px;
+		border: 0px;
+		transition: opacity 0.5s ease-out, height 0.5s ease-out;
+	}
+	
+	.menuBtn{
+		max-width: 170px;
+		overflow: hidden;
+		visibility: hidden;
+	}
+	
+	.mainImg{
+		display: none;
+	}
+	
+	
+	
+	.mobileMenu{
+		position: absolute;
+		width: 100%;
+		height: 0px;
+		background-color: #303030;
+		border: 0px;
+		transition: height 0.5s ease-out;
+		z-index: 500;
+	}
+	
+	.mobileMenu_open{
+		position: absolute;
+		width: 100%;
+		height: 240px;
+		background-color: #303030;
+		border-bottom: 1px solid #646464;
+		transition: height 0.5s ease-out;
+		z-index: 500;
+	}
+	
+	.mobileLogo{
+		visibility: visible;
+		margin-left: 10px;
+	}
+	
+	.mobileMenuSwitch{
+		float: right;
+		margin-top: 10px;
+		margin-right: 10px;
+		color: #fff;
+		z-index: 10000;
+	}
+	
+	.mobileMenuSwitchLines {
+		width: 35px;
+		height: 3px;
+		background-color: #fff;
+		margin: 8px 0;
+	}
+	
+	.mobMenuBtn{
+		text-align: center;
+		height:0px;
+		display: block;
+		opacity: 0;
+	}
+	
+	.mobMenuBtn_visible{
+		opacity: 1;
+		display: block;
+		padding-top: 40px;
+		visibility: visible;
+		/*height:40px;*/
+		transition: opacity 1s linear, height 0.5s linear;
+		margin-left: 10%;
+	}
+	
+	
+	.caption p{
+		font-weight: bold;
+		font-size: 2em;	
+	}
+
+	.caption_fadeout p{
+		font-weight: bold;
+		font-size: 2em;
+	}
+
+	.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+		background-attachment: scroll;
+		min-height: 300px;
+   }
+   
+   .projectRowLeft{
+		width: 100%;
+		float: none;
+		text-align: left;
+		padding: 3%;
+	}
+	
+	.projectRowRight{
+		width: 100%;
+		float: none;
+	}
+
+}
+
+.white{
+	color: #fff;
+}
