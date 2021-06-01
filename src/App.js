@@ -1,140 +1,87 @@
-import React from 'react';
+//import React from 'react';
 //import ReactDOM from 'react-dom';
-import './App.css';
+import React from 'react';
+import MainSection from './components/MainSection';
+//import './App.css';
 
-//Global variables
-const fbUrl="https://www.facebook.com/serazoltan89/";
-const linkdinUrl="https://www.linkedin.com/in/zoltansera";
-const gitUrl="https://github.com/zoltansera";
+import ProfileImg from './img/arc.jpg';
+
+
+const socialIconArray = { fbUrl: "https://www.facebook.com/serazoltan89/", linkdinUrl: "https://www.linkedin.com/in/zoltansera", gitUrl: "https://github.com/zoltansera" };
 
 const menuItemList = [
-	{title: 'HOME', link: '#top', key:'0'},
-	{title: 'INTRO', link: '#intro', key:'1'},
-	{title: 'PROJECTS', link: '#projects', key:'2'},
-	{title: 'ABOUT', link: '#about', key:'3'},
-	{title: 'CONTACT', link: '#contact', key:'4'}
+	{ title: 'home', link: 'top', uniqueId: '0' },
+	{ title: 'about', link: 'about', uniqueId: '1' },
+	{ title: 'projects', link: 'projects', uniqueId: '2' },
+	{ title: 'contact', link: 'contact', uniqueId: '3' }
 ]
 
-const skillList = [
-	{title: 'C', level: '3/5', key:'0'},
-	{title: 'C++', level: '3/5', key:'1'},
-	{title: 'HTML', level: '4/5', key:'2'},
-	{title: 'CSS', level: '3/5', key:'3'},
-	{title: 'JavaScript', level: '3/5', key:'4'},
-	{title: 'PHP', level: '3/5', key:'5'},
-	{title: 'MySQL', level: '3/5', key:'6'},
-	{title: 'React', level: '2/5', key:'7'}
-]
+/*const skillList = [
+	{ title: 'C', level: '3/5', key: '0' },
+	{ title: 'C++', level: '3/5', key: '1' },
+	{ title: 'HTML', level: '4/5', key: '2' },
+	{ title: 'CSS', level: '3/5', key: '3' },
+	{ title: 'JavaScript', level: '3/5', key: '4' },
+	{ title: 'PHP', level: '3/5', key: '5' },
+	{ title: 'MySQL', level: '3/5', key: '6' },
+	{ title: 'React', level: '2/5', key: '7' }
+]*/
 
-const projectList = [
-	{ title: 'Páfrányszál',
-	  desc: 'Páfranyszál is a small business ran by my wife. She creates macrame wall hangings, jewelry and other hand made home decorations. My first project was to set up a Woocommerce based webshop so she can sell her things online. The site uses custom child theme as landing page, has Billingo online billing and Barion online payment system connected.',
-	  imgsrc: 'img/pszal.jpg', link: 'https://pafranyszal.eu', key:'0'},
-	{ title: 'PHP & SQL Webshop',
-	  desc: 'This is a webshop which I strated to make from zero using PHP, MySQL, some JavaScript, HTML, CSS. Once it will be finished, it will replace the previously shown webshop. The main goal of this hobby project is to gain experience in PHP and SQL by planning and building up the database from scratch and using it to store products, user data and other required things which are needed for this simple e-commerce website. It is very exciting to see how an admin function is forming and starts to work, how can I manage and visualize data from my own admin site without writing SQL transactions.',
-	  imgsrc: 'img/webshop1.jpg',  link: 'https://github.com/zoltansera/webshop', key:'1'},
-	{ title: 'This portfolio page',
-	  desc: 'I would like to also mention here this portfolio. It was the first thing I\'ve tried to do using React. There is nothing extra about it, but this was a great opportunity to learn React basics. In this project I used custom CSS and React only.',
-	  imgsrc: 'img/portfolio.jpg',  link: 'https://github.com/zoltansera/zoltansera.github.io', key:'2'}
+/*const projectList = [
+	{
+		title: 'Páfrányszál',
+		desc: 'Páfranyszál is a small business ran by my wife. She creates macrame wall hangings, jewelry and other hand made home decorations. My first project was to set up a Woocommerce based webshop so she can sell her things online. The site uses custom child theme as landing page, has Billingo online billing and Barion online payment system connected.',
+		imgsrc: 'img/pszal.jpg', link: 'https://pafranyszal.eu', key: '0'
+	},
+	{
+		title: 'PHP & SQL Webshop',
+		desc: 'This is a webshop which I strated to make from zero using PHP, MySQL, some JavaScript, HTML, CSS. Once it will be finished, it will replace the previously shown webshop. The main goal of this hobby project is to gain experience in PHP and SQL by planning and building up the database from scratch and using it to store products, user data and other required things which are needed for this simple e-commerce website. It is very exciting to see how an admin function is forming and starts to work, how can I manage and visualize data from my own admin site without writing SQL transactions.',
+		imgsrc: 'img/webshop1.jpg', link: 'https://github.com/zoltansera/webshop', key: '1'
+	},
+	{
+		title: 'This portfolio page',
+		desc: 'I would like to also mention here this portfolio. It was the first thing I\'ve tried to do using React. There is nothing extra about it, but this was a great opportunity to learn React basics. In this project I used custom CSS and React only.',
+		imgsrc: 'img/portfolio.jpg', link: 'https://github.com/zoltansera/zoltansera.github.io', key: '2'
+	}
 ]
+*/
 
-//Classes
-class Div extends React.Component{
-	constructor(props){
+class App extends React.Component {
+	constructor(props) {
 		super(props);
-		this.thisRef = React.createRef();
-	}
-	render(){
-		return(
-			<div name={this.props.name} id={this.props.id} className={this.props.className} ref={this.thisRef}>{this.props.child}</div>
-		);
-	}
-}
-
-class Menu extends React.Component{
-	render(){
-		return(
-			<Div id="menu" className="menubar" child=<div><Div id="scrolledTranspMenuBarBg" className="scrTrasnpMenuBg" />{menuItemList.map(menuItem => <Div className="menuBtn" child=<a href={menuItem.link} className="desktopLinkBtn">{menuItem.title}</a> />) } </div> />
-		);
-	}
-}
-
-
-
-class MobileMenu extends React.Component{
-	openMenu(){
-		var state = document.getElementById("mobilemenu").className;
-		
-		if(state==="mobileMenu"){
-			document.getElementById("mobilemenu").className="mobileMenu_open";
-			
-			document.getElementById("midLine").style.transform="translateX(-70px)";
-			document.getElementById("midLine").style.opacity="0";
-			document.getElementById("midLine").style.transition="transform 0.2s linear, opacity 0.1s linear";
-			
-			document.getElementById("topLine").style.transform="rotate(45deg) translateY(16px)";
-			document.getElementById("topLine").style.transition="transform 0.3s linear";
-			
-			document.getElementById("bottomLine").style.transform="rotate(-45deg) translateY(-16px)";
-			document.getElementById("bottomLine").style.transition="transform 0.3s linear";
-			document.getElementsByName("mobiBtn").className="mobMenuBtn_visible";
-			for(let i=0;i<menuItemList.length;i++){
-				document.getElementsByName("mobiBtn")[i].className="mobMenuBtn_visible";
-			}
-		} else {
-			document.getElementById("mobilemenu").className="mobileMenu";
-			
-			document.getElementById("midLine").style.transform="translateX(0px)";
-			document.getElementById("midLine").style.opacity="1";
-			document.getElementById("midLine").style.transition="transform 0.2s linear, opacity 0.3s linear";
-			document.getElementById("topLine").style.transform="rotate(0deg) translateY(0px)";
-			document.getElementById("bottomLine").style.transform="rotate(0deg) translateY(0px)";
-			for(let i=0;i<menuItemList.length;i++){
-				document.getElementsByName("mobiBtn")[i].className="mobMenuBtn";
-			}
+		this.state = {
+			scrollPos: 0
 		}
 	}
-	
-	render(){
-		return(
-			<div id="mobilemenu" className="mobileMenu">
-				<div className="mobileMenuSwitch" onClick={this.openMenu}>
-					<div className="mobileMenuSwitchLines" id="topLine"></div>
-					<div className="mobileMenuSwitchLines" id="midLine"></div>
-					<div className="mobileMenuSwitchLines" id="bottomLine"></div>
-				</div>
-				{menuItemList.map(mobilemenuItem =><Div name="mobiBtn" className="mobMenuBtn" child=<a href={mobilemenuItem.link} className="linkBtn" key={mobilemenuItem.key}>{mobilemenuItem.title}</a> />)}
+
+	handleScroll = () => {
+		if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+			this.setState({ scrollPos: document.documentElement.scrollTop });
+		}
+	}
+
+	componentDidMount() {
+		window.addEventListener("scroll", this.handleScroll);
+	}
+
+	render() {
+		return (
+			<div>
+				<MainSection
+					menuItemList={menuItemList}
+					profileImg={ProfileImg}
+					profileName="Zoltán Séra"
+					socialLinks={socialIconArray}
+					scrollPos={this.state.scrollPos}
+				/>
 			</div>
 		);
 	}
 }
 
-class App extends React.Component{
-	
-	componentDidMount(){
-		document.getElementById("mainImgDiv").style.height= getBodySizeForMainImg() + "px";
-		document.getElementById("mainImgDiv").style.backgroundImage="url(main.jpg)";
-		document.getElementById("mainImgDiv").style.backgroundAttachment="fixed";
-		document.getElementById("mainImgDiv").style.backgroundPosition="center";
-		document.getElementById("mainImgDiv").style.backgroundRepeat="no-repeat";
-		document.getElementById("mainImgDiv").style.backgroundSize="cover";
-		window.addEventListener("scroll", this.handleScroll);
-		window.addEventListener("resize", getBodySizeForMainImg);
-	}	
-	
-	handleScroll(){
-		if( document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ){
-			document.getElementById("mainlogo").className="caption_fadeout";
-			document.getElementById("menu").className="menubar_scrolled";
-			document.getElementById("scrolledTranspMenuBarBg").className="scrTrasnpMenuBg_scrolled";
-			document.getElementById("floatTop").style.visibility="visible";
-		} else {
-			document.getElementById("mainlogo").className="caption";
-			document.getElementById("menu").className="menubar";
-			document.getElementById("scrolledTranspMenuBarBg").className="scrTrasnpMenuBg";
-			document.getElementById("floatTop").style.visibility="hidden";
-		}
-	}
+/*
+
+class AppOld extends React.Component{
 	
 	scrollTop() {
 		window.scrollTo(0, 0);
@@ -180,7 +127,7 @@ class App extends React.Component{
 					</>) }
 					</center>
 				</div> />
-  			
+				
 				<Div className="bgimg-3" />
 				
 				<Div id="about" className="textDiv" child=<div>
@@ -210,21 +157,10 @@ class App extends React.Component{
 	}
 }
 
-export default App;
-
-
-function SocialIcons(){
-	return(
-		<div>
-			<a href={fbUrl} rel="noreferrer" target="_blank"><i className="fa fa-facebook fa-fw fa-2x social-light"></i></a>&nbsp;&nbsp;&nbsp;
-			<a href={linkdinUrl} rel="noreferrer" target="_blank"><i className="fa fa-linkedin fa-fw fa-2x social-light"></i></a>&nbsp;&nbsp;&nbsp;
-			<a href={gitUrl} rel="noreferrer" target="_blank"><i className="fa fa-github fa-fw fa-2x social-light"></i></a>
-		</div>
-		);
-}
-
 function getBodySizeForMainImg(){
 	const height = Math.max( window.innerHeight );
 	document.getElementById("mainImgDiv").style.height= height + "px";
 	return height;
 }
+*/
+export default App;

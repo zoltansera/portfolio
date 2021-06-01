@@ -1,0 +1,68 @@
+
+.mobileMenu {
+    display: none;
+}
+
+@media (max-width: 600px){
+	.mobileMenu {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 500;
+        position: fixed;
+        background-color: transparent;
+	}
+	
+    .mobileMenuBtn {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .lineContainer {
+        position: absolute;
+        right: 10px;
+    }
+
+    .mobileMenuSwitchLines {
+		width: 35px;
+		height: 3px;
+		background-color: #fff;
+		margin: 8px;
+        transition: all 0.5s;
+	}
+	
+    .top {
+        transform: rotate(45deg) translateY(16px);
+	}
+
+    .middle {
+        transform: translateX(70px);
+        opacity: 0;
+	}
+
+    .bottom {
+        transform: rotate(-45deg) translateY(-16px);
+	}
+
+    .mobileMenuItem {
+        width: 100%;
+        height: auto;
+        display: block;
+        background-color: #333;
+        padding: 5px;
+        box-sizing: border-box;
+        transition: all 0.3s;
+        color:rgb(225, 235, 235);
+        text-align: center;
+    }
+
+    .hidden {
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+    .mobileMenuItem:active {
+        background-color: rgb(252, 192, 82);
+    }
+}

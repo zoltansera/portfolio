@@ -1,0 +1,21 @@
+.menuBar{
+	position: fixed;
+	background-color: transparent;
+	width: 100%;
+    height: auto;
+	opacity: 1;
+	z-index: 100;
+	text-align: center;
+	transition: opacity 0.5s ease-in, height 0.5s ease-in, background-color 0.5s linear;
+}
+
+.darken{
+	color: #fff;
+	background-color: rgb(252, 192, 82);
+}
+
+@media (max-width: 600px){
+	.menuBar {
+		display: none;
+	}
+}

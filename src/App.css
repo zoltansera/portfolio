@@ -1,36 +1,23 @@
-body, html{
-	height: 100%;
-	margin: 0;
+body{
 	font-family: 'Montserrat', sans-serif;
 	background-color: #303030;
-	color: #fff;
 }
 
 html {
 	scroll-behavior: smooth;
 }
 
-.menubar{
-	position: fixed;
-	background-color: transparent;
-	width: 100%;
-	opacity: 1;
-	z-index: 100;
-	text-align: center;
-	transition: opacity 0.5s ease-in, height 0.5s ease-in, background-color 0.5s linear;
-	border-bottom: 0px solid #eee;
-}
 
-.menubar_scrolled{
-	position: fixed;
-	background-color: transparent;
-	width: 100%;
-	border-bottom: 0px solid #fff;
-	opacity: 1;
-	z-index: 100;
-	text-align: center;
-	transition: opacity 0.5s ease-in, height 0.5s ease-in, background-color 0.5s linear;
-}
+
+
+
+
+
+
+
+
+
+
 
 .scrTrasnpMenuBg{
 	position: absolute;
@@ -52,26 +39,6 @@ html {
 	width: 100%;
 	border-bottom: 1px solid #545454;
 	transition: opacity 0.5s linear;
-}
-
-.menuBtn{
-	display: inline-block;
-	color: #fff;
-	text-decoration: none;
-	font-size: 18px;
-	max-width: 170px;
-	margin-right: 3px;	
-	height: 100%;
-	padding: 20px;
-	cursor: crosshair;
-	z-index: 200;
-	transition: color 0.3s ease-in, letter-spacing 0.3s ease-out, transform 0.3s linear, visibility 0.3s linear;
-}
-
-.menuBtn:hover{
-	color: #fff;
-	letter-spacing: 4px;
-	transform: rotate(5deg);
 }
 
 .desktopLinkBtn{
@@ -100,44 +67,6 @@ html {
 	margin-left: 0px;
 }
 
-.mobileMenu{
-	height: 0px;
-	width: 0px;
-	background-color: #303030;
-	border: 0px solid silver;
-	z-index: 500;
-}
-
-.mobileMenu_open{
-	height: 0px;
-	width: 0px;
-	z-index: 500;
-}
-
-.mobileLogo{
-	visibility: hidden;
-	height: 0px;
-	width: 0px;
-	transition: opacity 0.5s ease-out, height 0.5s ease-out;
-}
-
-.mobMenuBtn{
-	height:0px;
-	width: 0px;
-	visibility: hidden;
-}
-
-.mobMenuBtn_visible{
-	visibility: hidden;
-	height: 0px;
-}	
-	
-	
-	
-.mainImg{
-	display: initial;
-}
- 
 
 .footer{
 	position: relative;
@@ -218,33 +147,7 @@ html {
 }
 
 
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
 
-.bgimg-1 {
-  background-image: url("main.jpg");
-}
-
-.bgimg-2 {
-  background-image: url("main2.jpg");
-  min-height: 400px;
-}
-
-.bgimg-3 {
-  background-image: url("main3.jpg");
-  min-height: 400px;
-}
-
-.bgimg-4 {
-  background-image: url("main4.jpg");
-  min-height: 400px;
-}
 
 .caption{
   position: absolute;
@@ -282,16 +185,6 @@ html {
 	bottom: 10%;
 	width: 100%;
 	text-align: center;
-}
-
-.social-light{
-	color: #fff;
-	transition: transform 0.2s ease-in;
-}
-
-.social-light:hover{
-	color: #fff;
-	transform: rotate(20deg);
 }
 
 .floatingBackToTop{
@@ -349,89 +242,7 @@ html {
 
 
 @media (max-width: 900px) { 
-	.menubar{
-		opacity: 0;
-		height: 0px;
-		transition: opacity 0.5s ease-out, height 0.5s ease-out;
-	}
-	
-	.menubar_scrolled{
-		opacity: 0;
-		height: 0px;
-		border: 0px;
-		transition: opacity 0.5s ease-out, height 0.5s ease-out;
-	}
-	
-	.menuBtn{
-		max-width: 170px;
-		overflow: hidden;
-		visibility: hidden;
-	}
-	
-	.mainImg{
-		display: none;
-	}
-	
-	
-	
-	.mobileMenu{
-		position: absolute;
-		width: 100%;
-		height: 0px;
-		background-color: #303030;
-		border: 0px;
-		transition: height 0.5s ease-out;
-		z-index: 500;
-	}
-	
-	.mobileMenu_open{
-		position: absolute;
-		width: 100%;
-		height: 240px;
-		background-color: #303030;
-		border-bottom: 1px solid #646464;
-		transition: height 0.5s ease-out;
-		z-index: 500;
-	}
-	
-	.mobileLogo{
-		visibility: visible;
-		margin-left: 10px;
-	}
-	
-	.mobileMenuSwitch{
-		float: right;
-		margin-top: 10px;
-		margin-right: 10px;
-		color: #fff;
-		z-index: 10000;
-	}
-	
-	.mobileMenuSwitchLines {
-		width: 35px;
-		height: 3px;
-		background-color: #fff;
-		margin: 8px 0;
-	}
-	
-	.mobMenuBtn{
-		text-align: center;
-		height:0px;
-		display: block;
-		opacity: 0;
-	}
-	
-	.mobMenuBtn_visible{
-		opacity: 1;
-		display: block;
-		padding-top: 40px;
-		visibility: visible;
-		/*height:40px;*/
-		transition: opacity 1s linear, height 0.5s linear;
-		margin-left: 10%;
-	}
-	
-	
+
 	.caption p{
 		font-weight: bold;
 		font-size: 2em;	

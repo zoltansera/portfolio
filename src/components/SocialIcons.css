@@ -1,0 +1,15 @@
+.socialIconsContainer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.socialIconsContainer__icon{
+    color: tomato;
+	transition: transform 0.2s ease-in;
+}
+
+.socialIconsContainer__icon:hover{
+	color: rgb(253, 179, 109);
+	transform: rotate(20deg);
+}
